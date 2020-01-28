@@ -1,0 +1,65 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $white;
+    background-color: $blue;
+}
+
+// hide scrollbar
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+// route
+.route {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+}
+
+// input overrides
+.form-control {
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $blue;
+    color: $blue;
+
+    &:focus {
+        box-shadow: none !important;
+        border-bottom: 1px solid $blue;
+        background: transparent;
+        color: $light-blue;
+        text-shadow: none;
+        outline: none;
+    }
+
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+// fonts colors
+.blue-font {
+    color: $blue;
+}
+
+.red-font {
+    color: $red;
+}
+
+.orange-font {
+    color: $orange;
+}
+
+.light-blue-font {
+    color: $light-blue;
+}

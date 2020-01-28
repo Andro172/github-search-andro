@@ -1,0 +1,14 @@
+.nav-info {
+    background-color: $white;
+
+    .link {
+        color: $blue;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        text-decoration: none;
+
+        &:hover {
+            color: $light-blue;
+        }
+    }
+}
