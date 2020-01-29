@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Provider from './provider/provider';
 
 // Custom css
 import './assets/scss/index.scss';
 
 ReactDOM.render(
-  <App />,
+  <Provider>
+    <App />
+  </Provider>,
   document.getElementById('root'),
 );

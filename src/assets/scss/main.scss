@@ -17,12 +17,30 @@ body {
     display: none;
 }
 
+// link
+a {
+    color: $orange;
+    outline: none;
+    text-decoration: none !important;
+
+    &:hover {
+        color: $white;
+    }
+}
 
 // route
 .route {
     padding-top: 4rem;
     padding-bottom: 4rem;
     min-height: 100vh;
+}
+
+// alert overrides
+.alert-danger {
+    background-color: $red !important;
+    color: $white !important;
+    border: none !important;
+    box-shadow: 4px 4px 6px rgba($color: black, $alpha: .3) !important;
 }
 
 // input overrides
@@ -45,6 +63,10 @@ body {
     &:invalid {
         box-shadow: none;
     }
+}
+
+.avatar {
+    width: 6rem;
 }
 
 // fonts colors
