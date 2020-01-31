@@ -22,6 +22,10 @@ class SortControls extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  /**
+   * Handle input change
+   * @param {object} evt 
+   */
   handleChange(evt) {
     const {name, value} = evt.target;
     this.setState({

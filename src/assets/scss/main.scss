@@ -8,8 +8,8 @@ body {
     font-family: 'Helvetica', 'Arial', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: $white;
-    background-color: $blue;
+    color: $black;
+    background-color: $yellow;
 }
 
 // hide scrollbar
@@ -24,7 +24,8 @@ a {
     text-decoration: none !important;
 
     &:hover {
-        color: $white;
+        color: $yellow;
+        background-color: $black;
     }
 }
 
@@ -57,40 +58,52 @@ a {
     border-radius: 0;
     background: transparent;
     border: none;
-    border-bottom: 1px solid $blue;
-    color: $blue;
+    border-bottom: 1px solid $yellow;
+    color: $yellow;
 
     &:focus {
         box-shadow: none !important;
-        border-bottom: 1px solid $blue;
+        border-bottom: 1px solid $orange;
         background: transparent;
-        color: $light-blue;
+        color: $orange;
         text-shadow: none;
         outline: none;
     }
-
-    &:invalid {
-        box-shadow: none;
-    }
 }
 
+// line
+.line {
+    border-color: $yellow;
+}
+
+// placeholder color
+::placeholder {
+    color: $yellow !important;
+    opacity: .8 !important;
+}
+::-webkit-input-placeholder {
+    color: $yellow !important;
+    opacity: .8 !important;
+}
+::-moz-placeholder {
+    color: $yellow !important;
+    opacity: .8 !important;
+}
+
+// avatar picture
 .avatar {
     width: 6rem;
 }
 
 // fonts colors
-.blue-font {
-    color: $blue;
+.black-font {
+    color: $black;
 }
 
-.red-font {
-    color: $red;
+.yellow-font {
+    color: $yellow;
 }
 
 .orange-font {
     color: $orange;
-}
-
-.light-blue-font {
-    color: $light-blue;
 }

@@ -17,6 +17,7 @@ class UserReposList extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState){
+    // if different user is selected update state
     if(nextProps.userId !== prevState.userId){
       return { 
         userId: nextProps.userId,
@@ -26,6 +27,11 @@ class UserReposList extends React.Component {
     else return null;
   }
 
+  /**
+   * Sort list repository list
+   * @param {string} key 
+   * @param {string} direction 
+   */
   sortList(key,direction) {
     let list = [...this.state.repositories];
     list.sort((first, second) => {
@@ -41,6 +47,8 @@ class UserReposList extends React.Component {
         return second[key].toLowerCase().localeCompare(first[key].toLowerCase())
       }
     });
+
+    // update state with new sorted list
     this.setState({ repositories: list })
   }
 
@@ -57,7 +65,7 @@ class UserReposList extends React.Component {
     else {
       sortControls = <SortControls sortList={this.sortList} />;
       repoList = repositories.map(repo => (
-        <Col key={repo.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+        <Col key={repo.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
           <h5>{repo.name}</h5>
           <p>{repo.description ? repo.description : "No description"}</p>
           <p><Link href={repo.url}>{repo.url}</Link></p>
@@ -66,7 +74,7 @@ class UserReposList extends React.Component {
     }
 
     return (
-      <div>
+      <div className="list">
         {sortControls}
         <Row className="mt-5">
           {repoList}

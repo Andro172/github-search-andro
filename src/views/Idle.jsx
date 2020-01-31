@@ -7,7 +7,7 @@ function Idle() {
     <Container className="route">
       <div className="text-center">
         <FaGithub size="100" />
-        <p className="mt-3">Find user repositories!</p>
+        <h5 className="mt-3">Find user repositories!</h5>
       </div>
     </Container>
   );

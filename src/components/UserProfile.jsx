@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image';
 function UserProfile(props) {
   const { login, email, avatarUrl, url } = props
   return (
-    <div className="text-center profile">
+    <div className="text-center p-3">
       <Image fluid roundedCircle className="avatar mb-2" src={avatarUrl} />
       <p className="mb-1"><Link href={url}>{login}</Link></p>
       <p className="mt-0 mb-0">{email ? email : "No email"}</p>

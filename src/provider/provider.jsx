@@ -39,7 +39,7 @@ const client = new ApolloClient({
   onError: errorHandler
 });
 
-// await cache and render function
+// await cache and render function, not my idea
 export const setupProviderAndRender = async (component) => {
   await persistCache({
     cache: cache,

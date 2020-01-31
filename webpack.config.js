@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const dotenv = require('dotenv');
 const path = require('path');
 
+// not my code
 const config = () => {
   // call dotenv and it will return an Object with a parsed key 
   const env = dotenv.config().parsed;

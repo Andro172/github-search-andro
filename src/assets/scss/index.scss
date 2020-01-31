@@ -1,12 +1,10 @@
 // variables
 @import './variables.scss';
-// Bootstrap css
+
+// bootstrap css
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 // main layout
 @import './main.scss';
 @import './navbar.scss';
 @import './footer.scss';
-
-// views
-@import './home.scss'

@@ -19,7 +19,7 @@ function MyFooter() {
             <span><FaLinkedin size="20" /></span>
           </Col>
         </Row>
-        <hr />
+        <hr className="line" />
         <p className="year mb-0">&#9400; 2020 All rights reserved</p>
       </Container>
     </div>

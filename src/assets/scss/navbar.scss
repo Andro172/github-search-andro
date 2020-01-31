@@ -1,14 +1,14 @@
 .nav-info {
-    background-color: $white;
+    background-color: $black;
 
     .link {
-        color: $blue;
+        color: $yellow;
         margin-right: 1rem;
         margin-left: 1rem;
         text-decoration: none;
 
         &:hover {
-            color: $light-blue;
+            color: $orange;
         }
     }
 }

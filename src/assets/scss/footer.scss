@@ -1,13 +1,13 @@
 .my-footer {
-    background: $white;
-    color: $blue;
+    background: $black;
+    color: $yellow;
     position: relative;
 
     span {
         cursor: pointer;
 
         &:hover {
-            color: $light-blue;
+            color: $orange;
         }
     }
 

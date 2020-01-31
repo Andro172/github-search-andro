@@ -16,6 +16,10 @@ class SearchForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /**
+   * Handle input change
+   * @param {object} evt 
+   */
   handleChange(evt){
     const {name, value} = evt.target;
     this.setState({
@@ -23,6 +27,11 @@ class SearchForm extends React.Component {
     })
   }
 
+  /**
+   * Scroll to top of page and add searchTerm to client store
+   * @param {object} evt 
+   * @param {function} search 
+   */
   handleSubmit(evt, search) {
     evt.preventDefault();
     window.scrollTo(0,0);
@@ -37,14 +46,14 @@ class SearchForm extends React.Component {
           <Form inline className="ml-auto mr-md-3 mr-lg-5" onSubmit={(evt) => this.handleSubmit(evt,search)}>
             <FormControl 
               type="text" 
-              placeholder="Search Github" 
+              placeholder="Type username" 
               name="searchTerm" 
               className="mr-sm-2 w-auto" 
               onChange={this.handleChange}
               value={this.state.searchTerm}
             />
             <button type="submit" style={{background:"transparent", border: "none"}}>
-              <FaSearch className="blue-font" size="20" />
+              <FaSearch className="yellow-font icon" size="20" />
             </button>
           </Form>
         )}
