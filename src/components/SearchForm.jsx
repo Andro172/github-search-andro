@@ -2,14 +2,8 @@ import React from 'react';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import { FaSearch } from 'react-icons/fa';
-import { gql } from 'apollo-boost';
+import { SEARCH } from '../provider/queries';
 import { Mutation } from "react-apollo";
-
-const SEARCH = gql`
-  mutation search($searchTerm: String!) {
-    search(searchTerm: $searchTerm) @client
-  }
-`;
 
 class SearchForm extends React.Component {
   constructor(props) {

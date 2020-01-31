@@ -28,6 +28,15 @@ a {
     }
 }
 
+//icon
+.icon {
+    cursor: pointer;
+
+    &:hover {
+        color: $orange;
+    }
+}
+
 // route
 .route {
     padding-top: 4rem;

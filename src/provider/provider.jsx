@@ -1,12 +1,25 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import ApolloClient, { InMemoryCache } from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
-/* import { persistCache } from 'apollo-cache-persist' */
-import resolvers from './resolvers';
-import typeDefs from './typeDefs'
+import { persistCache } from 'apollo-cache-persist'
+import mutations from './mutations';
+
+// not my code
+const errorHandler = ({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.map(({ message, locations, path }) =>
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
+      ),
+    );
+
+  if (networkError) console.log(`[Network error]: ${networkError}`);
+};
 
 const cache = new InMemoryCache({});
 
+// create client
 const client = new ApolloClient({
   uri: process.env.GITHUB_URL,
   headers: {
@@ -18,33 +31,25 @@ const client = new ApolloClient({
   clientState: {
     defaults: {
         searchTerm: "",
-        user: {
-            login: "",
-            email: "",
-            avatarUrl: "",
-            url: "",
-            repositories: [],
-            __typename: "user"
-        },
     },
-    resolvers: resolvers,
-    typeDefs: typeDefs
-  }
+    resolvers: {
+      Mutation: mutations
+    },
+  },
+  onError: errorHandler
 });
 
-
-/* persistCache({
-  cache: cache, // Try adding cache like this.
-  storage: window.localStorage,
-  trigger:'write',
-  debug: true,
-}); */
-
-export default function Provider({ children }) {
-  
-  return (
-      <ApolloProvider client={client}>
-          {children}
-      </ApolloProvider>
-  )
+// await cache and render function
+export const setupProviderAndRender = async (component) => {
+  await persistCache({
+    cache: cache,
+    storage: window.localStorage,
+    debug: true,
+  });
+  ReactDOM.render(
+    <ApolloProvider client={client}>
+      {component}
+    </ApolloProvider>,
+    document.getElementById('root'),
+  );
 }

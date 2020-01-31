@@ -22,6 +22,7 @@ const config = () => {
       path: path.resolve(__dirname, 'public'),
       filename: 'bundle.js'
     },
+    devtool: 'source-map',
     module: {
       rules: [
         {

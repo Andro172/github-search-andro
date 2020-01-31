@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Link({children, ...props}) {
   return (
@@ -7,5 +8,9 @@ function Link({children, ...props}) {
     </a>
   )
 }
+
+Link.propTypes = {
+  children: PropTypes.any
+};
 
 export default Link;

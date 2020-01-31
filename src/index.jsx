@@ -1,14 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { setupProviderAndRender } from './provider/provider';
 import App from './App';
-import Provider from './provider/provider';
 
 // Custom css
 import './assets/scss/index.scss';
 
-ReactDOM.render(
-  <Provider>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
-);
+setupProviderAndRender(<App/>);
