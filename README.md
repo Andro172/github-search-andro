@@ -1,5 +1,11 @@
 # Github Search
 
+React app that searches github for user repositories
+
+## Prerequisites
+
+npm
+
 ## Building and running on localhost
 
 First install dependencies:
@@ -7,6 +13,8 @@ First install dependencies:
 ```sh
 npm install
 ```
+
+Then rename .env.example to .env and add your github personal access token
 
 To run in hot module reloading mode:
 
