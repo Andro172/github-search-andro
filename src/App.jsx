@@ -11,7 +11,6 @@ class App extends React.Component {
         <MyNavbar />
         <Switch>
           <Route component={Home} exact />
-          {/* <Redirect from="*" to="/" /> */}
         </Switch>
         <MyFooter />
       </Router>
